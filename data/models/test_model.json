@@ -1,0 +1,771 @@
+{
+  "q_table": {
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.08573021819398392
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.2386291064,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.091914,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.020000000000000004
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.11356968843499998,
+      "approach_object": 0.050065039112780006,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.052146974000000006,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.162646338003755,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": -0.22713937686999996,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.183945725,
+      "turn_left": 0.0406472942,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.07619999999999999,
+      "approach_object": 0.050065039112780006,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.29463097650607345,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.07855268168135181
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.030638000000000002,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.14145641195,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.1625891768,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0669322766,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.3044894251373113,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.136283626122,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.08000000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.10457884199703811,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.10160000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.091914,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.26376137332346034,
+      "approach_object": 0.025400000000000002,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.03,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.10744147673712696,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.18699144763235,
+      "turn_left": 0.025400000000000002,
+      "turn_right": 0.0,
+      "stop": 0.025400000000000002,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0635,
+      "turn_left": 0.020000000000000004,
+      "turn_right": 0.0,
+      "stop": 0.10613814988678208,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": -0.20323647099999997,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.08219610123091126,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.26144710499259527,
+      "avoid_obstacle": 0.056582564780000004
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.4787200823262841,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.025400000000000002,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.06000000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0635,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.030638000000000002,
+      "explore": 0.0635,
+      "approach_object": 0.038000000000000006,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.41831536798815244,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.12502759615707285,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.030638000000000002,
+      "avoid_obstacle": 0.020000000000000004
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": -0.17859429999999998,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.087316921147646,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.045957,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": -0.127,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.08023904894,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.12255200000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.05658256478000001,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.035718860000000005,
+      "turn_right": 0.0,
+      "stop": 0.020000000000000004,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.20858789600000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.038099999999999995,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.2666447754,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.3429208727759357,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.07619999999999999,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.07620000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.25583102576,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.058574000000000015,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0609709413,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.076595,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.020000000000000004
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.19029680000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.11356968843499998,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0362
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.06000000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.09191400000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.38179475889848,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.020000000000000004,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.1963817042033795,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": -0.15319,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0406472942,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.0,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.025400000000000002,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.076595,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.14272260000000003,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.10715,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": -0.12,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.12255200000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": -0.1,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"far\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.07620000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.10160000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.0635,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": -0.1,
+      "turn_left": 0.020000000000000004,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"very_close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": -0.1,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"close\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.038099999999999995,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.08000000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"normal\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.06000000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.07620000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.06000000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"bright\"], [\"object_detected\", \"none\"]]": {
+      "move_forward": 0.10160000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"close\"], [\"light_level\", \"bright\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.05,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"chair\"]]": {
+      "move_forward": 0.06000000000000001,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"low\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.03,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"medium\"], [\"distance_cm\", \"far\"], [\"light_level\", \"dark\"], [\"object_detected\", \"wall\"]]": {
+      "move_forward": 0.08000000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    },
+    "[[\"battery_level\", \"high\"], [\"distance_cm\", \"medium\"], [\"light_level\", \"dark\"], [\"object_detected\", \"person\"]]": {
+      "move_forward": 0.08000000000000002,
+      "turn_left": 0.0,
+      "turn_right": 0.0,
+      "stop": 0.0,
+      "explore": 0.0,
+      "approach_object": 0.0,
+      "avoid_obstacle": 0.0
+    }
+  },
+  "training_step": 200,
+  "current_epsilon": 0.13397967485796175,
+  "stats": {
+    "total_decisions": 200,
+    "exploration_decisions": 79,
+    "exploitation_decisions": 121,
+    "avg_reward_recent": 0.36600000000000005,
+    "learning_episodes": 200,
+    "best_cumulative_reward": 0.0,
+    "current_epsilon": 0.13397967485796175
+  },
+  "config": {
+    "learning_rate": 0.1,
+    "epsilon_start": 1.0,
+    "epsilon_end": 0.1,
+    "epsilon_decay": 0.99,
+    "memory_size": 1000,
+    "batch_size": 16
+  },
+  "actions": [
+    "move_forward",
+    "turn_left",
+    "turn_right",
+    "stop",
+    "explore",
+    "approach_object",
+    "avoid_obstacle"
+  ],
+  "saved_timestamp": 1757792540.908874
+}

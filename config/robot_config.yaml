@@ -1,0 +1,160 @@
+# Robot AI - Main Configuration File
+# ===================================
+
+# Hardware Configuration
+hardware:
+  # Raspberry Pi Camera
+  camera:
+    resolution: [640, 480]
+    framerate: 30
+    rotation: 0
+    brightness: 50
+    contrast: 0
+    saturation: 0
+    
+  # Ultrasonic Sensor (HC-SR04)
+  ultrasonic:
+    trigger_pin: 18
+    echo_pin: 24
+    max_distance: 400  # cm
+    timeout: 1.0       # seconds
+    
+  # Light Sensors (Photoresistors)
+  light_sensors:
+    pins: [23, 25, 8, 7]  # GPIO pins
+    threshold_dark: 300
+    threshold_bright: 700
+    
+  # Motors
+  motors:
+    left_pwm_pin: 12
+    left_dir_pins: [16, 20]
+    right_pwm_pin: 13  
+    right_dir_pins: [19, 26]
+    max_speed: 100
+    base_speed: 40
+    
+  # LED Matrix
+  led_matrix:
+    data_pin: 10
+    clock_pin: 11
+    brightness: 5  # 0-15
+
+# AI Configuration
+ai:
+  # Computer Vision
+  vision:
+    object_detection:
+      model: "yolov8n.pt"
+      confidence_threshold: 0.5
+      iou_threshold: 0.45
+      target_classes: ["person", "cat", "dog", "chair", "bottle", "cup"]
+      
+    motion_detection:
+      threshold: 25
+      min_area: 500
+      dilate_iterations: 2
+      
+  # Reinforcement Learning
+  reinforcement_learning:
+    algorithm: "DQN"
+    learning_rate: 0.001
+    epsilon_start: 1.0
+    epsilon_end: 0.01
+    epsilon_decay: 0.995
+    memory_size: 10000
+    batch_size: 32
+    target_update: 100
+    
+  # SLAM
+  slam:
+    map_resolution: 0.05  # meters per pixel
+    map_size: [2000, 2000]  # pixels
+    particle_count: 100
+    laser_range: 4.0  # meters
+    
+# Behavioral Configuration
+behavior:
+  # Emotional States
+  emotions:
+    curious:
+      speed_multiplier: 0.8
+      exploration_bias: 0.9
+      caution_level: 0.3
+      
+    cautious:
+      speed_multiplier: 0.4
+      exploration_bias: 0.2
+      caution_level: 0.9
+      
+    playful:
+      speed_multiplier: 1.0
+      exploration_bias: 0.7
+      caution_level: 0.4
+      
+    alert:
+      speed_multiplier: 0.6
+      exploration_bias: 0.1
+      caution_level: 0.8
+      
+    focused:
+      speed_multiplier: 0.7
+      exploration_bias: 0.3
+      caution_level: 0.6
+      
+    resting:
+      speed_multiplier: 0.1
+      exploration_bias: 0.0
+      caution_level: 0.9
+  
+  # Decision Making
+  decision_tree:
+    obstacle_distance_threshold: 30.0  # cm
+    light_change_threshold: 100
+    motion_detection_threshold: 5
+    curiosity_decay_rate: 0.98
+    energy_threshold: 20  # percentage
+    
+  # Safety Parameters
+  safety:
+    min_distance_obstacles: 15.0  # cm
+    max_slope_angle: 15.0  # degrees
+    emergency_stop_distance: 10.0  # cm
+    recovery_timeout: 5.0  # seconds
+
+# System Configuration
+system:
+  # Logging
+  logging:
+    level: "INFO"
+    file: "logs/robot.log"
+    max_size: "10MB"
+    backup_count: 5
+    
+  # Database
+  database:
+    path: "data/robot_memory.db"
+    backup_interval: 3600  # seconds
+    
+  # Communication
+  communication:
+    mqtt:
+      broker: "localhost"
+      port: 1883
+      topics:
+        telemetry: "robot/telemetry"
+        commands: "robot/commands"
+        status: "robot/status"
+        
+    web_dashboard:
+      host: "0.0.0.0"
+      port: 8080
+      debug: false
+      
+  # Performance
+  performance:
+    main_loop_frequency: 10  # Hz
+    perception_frequency: 30  # Hz
+    decision_frequency: 5   # Hz
+    action_frequency: 20    # Hz
+    memory_save_interval: 60  # seconds
