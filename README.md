@@ -60,6 +60,22 @@ Power Management:
 └── Autonomia stimata: 4-6 ore operative continue
 ```
 
+### Arduino Pin Mapping (Keyestudio KS0555)
+```
+Hardware Pin Configuration (OFFICIAL):
+├── Ultrasonico HC-SR04: Trig=12, Echo=13
+├── Motori: Left(PWM=6,Ctrl=4), Right(PWM=5,Ctrl=2)
+├── Servo Ultrasonico: Pin=10 (pan/tilt sensor)
+├── Fotoresistori: A0,A1,A2,A3 (rilevamento luce)
+├── LED Matrix: Data=10, Clock=11, CS=13
+└── Serial: 115200 baud (Raspberry Pi ↔ Arduino)
+
+Motor Control Logic:
+├── Forward: digitalWrite(CTRL, HIGH) + analogWrite(PWM, speed)
+├── Reverse: digitalWrite(CTRL, LOW) + analogWrite(PWM, 200)
+└── Turn: Differential drive (one motor forward, one reverse)
+```
+
 ---
 
 ## 🏗️ Architettura AI
@@ -273,6 +289,9 @@ sudo chmod +x scripts/setup_hardware.sh
 
 # Quick Start - Launch Robot!
 python3 launch_robot.py autonomous  # Full autonomous exploration
+
+# Test hardware after KS0555 pin mapping update
+python3 tests/hardware/test_ks0555_pins.py  # Validate pin configuration
 ```
 
 ---

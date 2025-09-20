@@ -73,6 +73,9 @@ make deploy                         # Deploy to RPi5
 python3 tests/hardware/test_direct_movement.py
 python3 deployment/launch_autonomous_robot.py
 
+# Test KS0555 Pin Mapping
+python3 tests/hardware/test_ks0555_pins.py  # Validate pin config
+
 # Deploy
 scp -r src config tests deployment andrea@raspberrypi.local:/home/andrea/
 ```
@@ -99,6 +102,16 @@ await asyncio.sleep(0.1)
 Motor → 1s delay → LED → Sensor → Safety (LAST)
 ```
 **Never parallel**: Timing dependencies
+
+### **Keyestudio KS0555 Pin Mapping**
+```arduino
+// OFFICIAL pin mapping from KS0555 tutorial
+ULTRASONIC: Trig=12, Echo=13
+MOTORS: Left(PWM=6,Ctrl=4), Right(PWM=5,Ctrl=2)
+SERVO: Pin=10 (ultrasonico pan/tilt)
+SENSORS: A0,A1,A2,A3 (photoresistors)
+```
+**Critical**: HIGH=forward, LOW=reverse for motors
 
 ### **Error Logging**
 ```python

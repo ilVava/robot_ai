@@ -244,6 +244,121 @@ echo "🔄 Run: newgrp dialout before hardware operations"
 
 ---
 
+## 🔌 **Keyestudio KS0555 Pin Mapping (OFFICIAL)**
+
+### **Arduino Pin Configuration**
+
+Dal tutorial ufficiale KS0555, pin mapping **VALIDATED**:
+
+```arduino
+// Hardware Pin Definitions - Keyestudio KS0555 Official Mapping
+const int TRIG_PIN = 12;        // Ultrasonic Trigger
+const int ECHO_PIN = 13;        // Ultrasonic Echo
+
+// Motor Control - KS0555 Official Pin Mapping
+const int LEFT_MOTOR_PWM = 6;   // ML_PWM (Left Motor Speed)
+const int LEFT_MOTOR_CTRL = 4;  // ML_Ctrl (Left Motor Direction)
+
+const int RIGHT_MOTOR_PWM = 5;  // MR_PWM (Right Motor Speed)
+const int RIGHT_MOTOR_CTRL = 2; // MR_Ctrl (Right Motor Direction)
+
+// Servo for ultrasonic pan/tilt
+const int SERVO_PIN = 10;
+
+// Photoresistors (Light Sensors)
+const int PHOTO_PINS[4] = {A0, A1, A2, A3};
+
+// LED Matrix (if available)
+const int LED_DATA_PIN = 10;    // Shared with servo - check hardware
+const int LED_CLOCK_PIN = 11;
+const int LED_CS_PIN = 13;      // Shared with Echo - check hardware
+```
+
+### **Motor Control Logic (KS0555 Pattern)**
+
+```arduino
+// Forward Movement
+void moveForward() {
+  digitalWrite(LEFT_MOTOR_CTRL, HIGH);   // HIGH = Forward
+  analogWrite(LEFT_MOTOR_PWM, speed);    // Speed control
+
+  digitalWrite(RIGHT_MOTOR_CTRL, HIGH);  // HIGH = Forward
+  analogWrite(RIGHT_MOTOR_PWM, speed);
+}
+
+// Backward Movement
+void moveBackward() {
+  digitalWrite(LEFT_MOTOR_CTRL, LOW);    // LOW = Reverse
+  analogWrite(LEFT_MOTOR_PWM, 200);      // Higher PWM for reverse
+
+  digitalWrite(RIGHT_MOTOR_CTRL, LOW);   // LOW = Reverse
+  analogWrite(RIGHT_MOTOR_PWM, 200);
+}
+
+// Turn Left (differential drive)
+void turnLeft() {
+  digitalWrite(LEFT_MOTOR_CTRL, LOW);    // Left reverse
+  analogWrite(LEFT_MOTOR_PWM, 200);
+
+  digitalWrite(RIGHT_MOTOR_CTRL, HIGH);  // Right forward
+  analogWrite(RIGHT_MOTOR_PWM, speed);
+}
+```
+
+### **Servo Control (from lesson_12)**
+
+```arduino
+void setServoAngle(int angle) {
+  angle = constrain(angle, 0, 180);
+
+  for (int i = 0; i < 5; i++) {
+    int pulsewidth = angle * 11 + 500;  // Official formula
+    digitalWrite(SERVO_PIN, HIGH);
+    delayMicroseconds(pulsewidth);
+    digitalWrite(SERVO_PIN, LOW);
+    delay(20 - pulsewidth / 1000);     // Complete 20ms cycle
+  }
+}
+```
+
+### **Ultrasonic Distance Reading**
+
+```arduino
+float readDistance() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  float distance = pulseIn(ECHO_PIN, HIGH) / 58.20;  // KS0555 calibration
+  return distance;
+}
+```
+
+### **⚠️ IMPORTANT: Pin Conflicts**
+
+**Pin 10 Conflict**: Servo (SERVO_PIN) vs LED Matrix (LED_DATA_PIN)
+- **Solution**: Use servo for primary operations, LED as secondary
+- **Alternative**: Move LED to unused pins (7, 8, 9)
+
+**Pin 13 Conflict**: Ultrasonic Echo (ECHO_PIN) vs LED CS (LED_CS_PIN)
+- **Solution**: Prioritize ultrasonic sensor for navigation
+- **Alternative**: Use software SPI for LED matrix
+
+### **Serial Commands Extended**
+
+```
+SERVO:90        -> Position servo to 90 degrees
+SERVO:0         -> Look right (0°)
+SERVO:180       -> Look left (180°)
+READ_SENSORS    -> Returns distance + light sensors
+MOVE_FORWARD    -> Forward with current speed
+STOP            -> Stop all motors + center servo
+```
+
+---
+
 ## 📊 **Testing & Validation**
 
 ### **Incremental Testing Strategy**

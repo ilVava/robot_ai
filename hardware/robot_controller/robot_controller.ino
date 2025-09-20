@@ -5,33 +5,35 @@
  * Sketch per comunicazione seriale tra Raspberry Pi 5 e Arduino Uno
  * Controlla sensori e attuatori del kit Keyestudio Caterpillar V3
  *
- * Hardware Connections:
- * - Ultrasonico HC-SR04: Trig=7, Echo=8
+ * Hardware Connections (KS0555 Official):
+ * - Ultrasonico HC-SR04: Trig=12, Echo=13
  * - Fotoresistori: A0,A1,A2,A3
- * - Motori: PWM=3,5,6,9 Direction=2,4,7,12
+ * - Motori: Left(PWM=6,Ctrl=4), Right(PWM=5,Ctrl=2)
+ * - Servo Ultrasonico: Pin=10
  * - LED Matrix: Data=10, Clock=11, CS=13
  *
  * Serial Protocol: 115200 baud
- * Commands: READ_SENSORS, MOVE_FORWARD, MOVE_BACKWARD, TURN_LEFT, TURN_RIGHT, STOP, SET_SPEED, LED_PATTERN
+ * Commands: READ_SENSORS, MOVE_FORWARD, MOVE_BACKWARD, TURN_LEFT, TURN_RIGHT, STOP, SET_SPEED, LED_PATTERN, SERVO
  *
  * Author: Robot AI Project
  */
 
-// Hardware Pin Definitions
-const int TRIG_PIN = 7;
-const int ECHO_PIN = 8;
+// Hardware Pin Definitions - Keyestudio KS0555 Official Mapping
+const int TRIG_PIN = 12;        // Ultrasonic Trigger
+const int ECHO_PIN = 13;        // Ultrasonic Echo
 
 // Photoresistors (Light Sensors)
 const int PHOTO_PINS[4] = {A0, A1, A2, A3};
 
-// Motor Control - Keyestudio configuration
-const int LEFT_MOTOR_PWM = 5;
-const int LEFT_MOTOR_DIR1 = 4;
-const int LEFT_MOTOR_DIR2 = 2;
+// Motor Control - Keyestudio KS0555 Official Pin Mapping
+const int LEFT_MOTOR_PWM = 6;   // ML_PWM (Left Motor Speed)
+const int LEFT_MOTOR_CTRL = 4;  // ML_Ctrl (Left Motor Direction)
 
-const int RIGHT_MOTOR_PWM = 6;
-const int RIGHT_MOTOR_DIR1 = 7;
-const int RIGHT_MOTOR_DIR2 = 8;
+const int RIGHT_MOTOR_PWM = 5;  // MR_PWM (Right Motor Speed)
+const int RIGHT_MOTOR_CTRL = 2; // MR_Ctrl (Right Motor Direction)
+
+// Servo for ultrasonic pan/tilt
+const int SERVO_PIN = 10;
 
 // LED Matrix
 const int LED_DATA_PIN = 10;
@@ -51,12 +53,13 @@ void setup() {
 
   // Setup motor pins
   pinMode(LEFT_MOTOR_PWM, OUTPUT);
-  pinMode(LEFT_MOTOR_DIR1, OUTPUT);
-  pinMode(LEFT_MOTOR_DIR2, OUTPUT);
+  pinMode(LEFT_MOTOR_CTRL, OUTPUT);
 
   pinMode(RIGHT_MOTOR_PWM, OUTPUT);
-  pinMode(RIGHT_MOTOR_DIR1, OUTPUT);
-  pinMode(RIGHT_MOTOR_DIR2, OUTPUT);
+  pinMode(RIGHT_MOTOR_CTRL, OUTPUT);
+
+  // Setup servo pin
+  pinMode(SERVO_PIN, OUTPUT);
 
   // Setup LED pins
   pinMode(LED_DATA_PIN, OUTPUT);
@@ -66,6 +69,7 @@ void setup() {
   // Initialize all systems
   stopMotors();
   setLedPattern(0); // LEDs off
+  setServoAngle(90); // Center servo position
 
   // Send ready signal to Raspberry Pi
   Serial.println("ARDUINO_READY");
@@ -118,6 +122,10 @@ void processCommand(String cmd) {
   else if (cmd.startsWith("LED_PATTERN:")) {
     int pattern = cmd.substring(12).toInt();
     setLedPattern(pattern);
+  }
+  else if (cmd.startsWith("SERVO:")) {
+    int angle = cmd.substring(6).toInt();
+    setServoAngle(angle);
   }
   else if (cmd == "PING") {
     Serial.println("PONG");
@@ -180,68 +188,56 @@ long readUltrasonicDistance() {
 }
 
 void moveForward() {
-  // Left motor forward
-  digitalWrite(LEFT_MOTOR_DIR1, HIGH);
-  digitalWrite(LEFT_MOTOR_DIR2, LOW);
+  // Forward: HIGH direction control + PWM speed (based on KS0555 tutorial)
+  digitalWrite(LEFT_MOTOR_CTRL, HIGH);
   analogWrite(LEFT_MOTOR_PWM, currentSpeed);
 
-  // Right motor forward
-  digitalWrite(RIGHT_MOTOR_DIR1, HIGH);
-  digitalWrite(RIGHT_MOTOR_DIR2, LOW);
+  digitalWrite(RIGHT_MOTOR_CTRL, HIGH);
   analogWrite(RIGHT_MOTOR_PWM, currentSpeed);
 
   Serial.println("ACTION:MOVE_FORWARD:SPEED:" + String(currentSpeed));
 }
 
 void moveBackward() {
-  // Left motor backward
-  digitalWrite(LEFT_MOTOR_DIR1, LOW);
-  digitalWrite(LEFT_MOTOR_DIR2, HIGH);
-  analogWrite(LEFT_MOTOR_PWM, currentSpeed);
+  // Backward: LOW direction control + high PWM speed (based on KS0555 tutorial)
+  digitalWrite(LEFT_MOTOR_CTRL, LOW);
+  analogWrite(LEFT_MOTOR_PWM, 200);  // Higher PWM for reverse direction
 
-  // Right motor backward
-  digitalWrite(RIGHT_MOTOR_DIR1, LOW);
-  digitalWrite(RIGHT_MOTOR_DIR2, HIGH);
-  analogWrite(RIGHT_MOTOR_PWM, currentSpeed);
+  digitalWrite(RIGHT_MOTOR_CTRL, LOW);
+  analogWrite(RIGHT_MOTOR_PWM, 200);
 
-  Serial.println("ACTION:MOVE_BACKWARD:SPEED:" + String(currentSpeed));
+  Serial.println("ACTION:MOVE_BACKWARD:SPEED:200");
 }
 
 void turnLeft() {
-  // Left motor backward, right motor forward
-  digitalWrite(LEFT_MOTOR_DIR1, LOW);
-  digitalWrite(LEFT_MOTOR_DIR2, HIGH);
-  analogWrite(LEFT_MOTOR_PWM, currentSpeed);
+  // Turn left: left motor reverse, right motor forward (KS0555 pattern)
+  digitalWrite(LEFT_MOTOR_CTRL, LOW);
+  analogWrite(LEFT_MOTOR_PWM, 200);
 
-  digitalWrite(RIGHT_MOTOR_DIR1, HIGH);
-  digitalWrite(RIGHT_MOTOR_DIR2, LOW);
+  digitalWrite(RIGHT_MOTOR_CTRL, HIGH);
   analogWrite(RIGHT_MOTOR_PWM, currentSpeed);
 
   Serial.println("ACTION:TURN_LEFT:SPEED:" + String(currentSpeed));
 }
 
 void turnRight() {
-  // Left motor forward, right motor backward
-  digitalWrite(LEFT_MOTOR_DIR1, HIGH);
-  digitalWrite(LEFT_MOTOR_DIR2, LOW);
+  // Turn right: left motor forward, right motor reverse (KS0555 pattern)
+  digitalWrite(LEFT_MOTOR_CTRL, HIGH);
   analogWrite(LEFT_MOTOR_PWM, currentSpeed);
 
-  digitalWrite(RIGHT_MOTOR_DIR1, LOW);
-  digitalWrite(RIGHT_MOTOR_DIR2, HIGH);
-  analogWrite(RIGHT_MOTOR_PWM, currentSpeed);
+  digitalWrite(RIGHT_MOTOR_CTRL, LOW);
+  analogWrite(RIGHT_MOTOR_PWM, 200);
 
   Serial.println("ACTION:TURN_RIGHT:SPEED:" + String(currentSpeed));
 }
 
 void stopMotors() {
-  // Stop both motors
+  // Stop both motors (KS0555 pattern)
   analogWrite(LEFT_MOTOR_PWM, 0);
   analogWrite(RIGHT_MOTOR_PWM, 0);
 
-  digitalWrite(LEFT_MOTOR_DIR1, LOW);
-  digitalWrite(LEFT_MOTOR_DIR2, LOW);
-  digitalWrite(RIGHT_MOTOR_DIR1, LOW);
-  digitalWrite(RIGHT_MOTOR_DIR2, LOW);
+  digitalWrite(LEFT_MOTOR_CTRL, LOW);
+  digitalWrite(RIGHT_MOTOR_CTRL, LOW);
 
   Serial.println("ACTION:STOP");
 }
@@ -306,6 +302,21 @@ void printStatus() {
   Serial.print(",\"free_memory\":");
   Serial.print(getFreeMemory());
   Serial.println("}");
+}
+
+// Servo control function (from KS0555 tutorial)
+void setServoAngle(int angle) {
+  angle = constrain(angle, 0, 180);  // Ensure valid servo range
+
+  for (int i = 0; i < 5; i++) {
+    int pulsewidth = angle * 11 + 500;  // Calculate pulse width
+    digitalWrite(SERVO_PIN, HIGH);
+    delayMicroseconds(pulsewidth);
+    digitalWrite(SERVO_PIN, LOW);
+    delay(20 - pulsewidth / 1000);  // Complete 20ms cycle
+  }
+
+  Serial.println("ACTION:SERVO_ANGLE:" + String(angle));
 }
 
 int getFreeMemory() {
